@@ -1,4 +1,4 @@
-/// <reference types="cypress" />
+//// <reference types="cypress" />
 
 describe("assertion Add function",()=>{
 
@@ -8,7 +8,7 @@ describe("assertion Add function",()=>{
         expect(10+15).to.be.equal(25)
     })
 
-  
+    
 
 
 })
