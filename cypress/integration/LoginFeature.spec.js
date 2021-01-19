@@ -7,7 +7,7 @@ describe("test Login Feature",()=>{
 
     })
 
-    it.only("Login with valid username and password",()=>{
+    it("Login with valid username and password",()=>{
 
         //login with valid username and password
         cy.get('#user-name').clear().type("standard_user")
@@ -96,10 +96,10 @@ describe("test Login Feature",()=>{
     })
 
     it.only("Login with performance glitch user",()=>{
-        cy.get('#user-name').clear().type("performance_glitch_user")
-        cy.get('#password').clear().type("secret_sauce")
-        cy.get('input[type="submit"]').should('be.visible').click()
-        cy.get('#item_4_img_link').find('[src="./img/sauce-backpack-1200x1500.jpg"]',{timeout:10000}).should('exist')
+        cy.xpath('//*[@id="user-name"]').clear().type("performance_glitch_user")
+        cy.xpath('//*[@id="password"]').clear().type("secret_sauce")
+        cy.xpath('//*[@id="login-button"]').should('be.visible').click()
+        cy.xpath('//*[@id="item_4_img_link"]/img').should('exist',{timeout:10000})
     })
 
 })
