@@ -23,3 +23,11 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
+
+   //可以通过修改cy.visit()方法，等待Color Change
+// Cypress.Commands.overwrite("visit", (originalFn, url, options) => {
+
+//   originalFn(url, options);
+//   cy.get('#visibleAfter',{timeout:5000}).should('be.visible');
+
+// })
