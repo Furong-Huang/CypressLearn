@@ -1,5 +1,4 @@
 {
-    "baseUrl": "https://www.saucedemo.com/",
-    "defaultCommandTimeout": 5000
+    "baseUrl": "https://www.saucedemo.com/"
    
 }
