@@ -1,9 +1,5 @@
 {
-  "firstName": "Sam",
-  "lastName": "Sung",
-  "Email": "Sam@example.com",
-  "Gender": "Male",
-  "Mobile": "0212694211",
-  "State" : "Haryana",
-  "City" : "Panipat"
+  "id": 8739,
+  "name": "Jane",
+  "email": "jane@example.com"
 }

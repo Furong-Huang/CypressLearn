@@ -1,13 +1,15 @@
-describe("test Login Feature",()=>{
+describe("test Login Feature with happy path",()=>{
 
     beforeEach('Before each case to run below code',()=>{
 
         cy.visit('/',{timeout:10000})
         cy.url().should('contain','saucedemo')
-
+        cy.window().then( win =>{
+            win.sessionStorage.clear()
+        })
     })
 
-    it("Login with valid username and password",()=>{
+    it.only("Login with valid username and password",()=>{
 
         //login with valid username and password
         cy.get('#user-name').clear().type("standard_user")
@@ -19,16 +21,10 @@ describe("test Login Feature",()=>{
         cy.get('#item_4_img_link').find('[src="./img/sauce-backpack-1200x1500.jpg"]',{timeout:10000}).should('be.exist')
         cy.get('.inventory_item').should('have.length',6)
 
-        //Add 3 items to cart and check quantity whether equal to 3
-        cy.get('button.btn_primary').then(buttons =>{
-            let count=0
-            for(;count<3;count++)
-            {
-                cy.wrap(buttons).eq(count).click()
-            }
-            cy.get('#shopping_cart_container').should('contain',count.toString())  
-            cy.get('#shopping_cart_container').click()
-        })
+        //Add number items to cart and check quantity whether equal to number
+        cy.addToCart(5)
+        cy.clearCart()
+        cy.get('#shopping_cart_container').click()
 
         //cy.get('.cart_quantity').first().invoke('text').should('eq','1')
 
@@ -43,6 +39,18 @@ describe("test Login Feature",()=>{
         cy.contains('THANK YOU FOR YOUR ORDER',{timeout:10000}).should('be.visible')
 
     })
+
+})
+
+describe("test Login Feature with negative path",()=>{
+
+    beforeEach('Before each case to run below code',()=>{
+
+        cy.visit('/',{timeout:10000})
+        cy.url().should('contain','saucedemo')
+
+    })
+
 
     it("Login with empty username and correct password",()=>{
         cy.get('#user-name').clear()
@@ -95,7 +103,7 @@ describe("test Login Feature",()=>{
         cy.get('#item_4_img_link').find('[src="./img/sauce-backpack-1200x1500.jpg"]',{timeout:10000}).should('not.exist')
     })
 
-    it.only("Login with performance glitch user",()=>{
+    it("Login with performance glitch user",()=>{
         cy.xpath('//*[@id="user-name"]').clear().type("performance_glitch_user")
         cy.xpath('//*[@id="password"]').clear().type("secret_sauce")
         cy.xpath('//*[@id="login-button"]').should('be.visible').click()

@@ -18,9 +18,14 @@
   },
   "homepage": "https://github.com/Furong-Huang/CypressLearn#readme",
   "dependencies": {
-    "cypress": "^6.2.1"
+    "bootstrap": "^4.6.0",
+    "cypress": "^6.2.1",
+    "jquery": "^3.5.1",
+    "lodash": "^4.17.20",
+    "popper.js": "^1.16.1"
   },
   "devDependencies": {
+    "@types/lodash": "^4.14.168",
     "chai": "^4.2.0",
     "cypress-xpath": "^1.6.1"
   }

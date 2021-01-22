@@ -1,11 +1,4 @@
-const helper = require("../helper");
-
 describe("CypressHomework03", () => {
-  beforeEach(() => {
-
-     helper.assignAliasesforProfile('profile.json')
-
-  });
 
   it("Wait for Color Change", () => {
     //Method 1, set the defaultCommandTimeout to 5000ms in cypress.json file
@@ -13,9 +6,11 @@ describe("CypressHomework03", () => {
     cy.visit("https://demoqa.com/dynamic-properties");
   });
 
+
   it.only("Fill the information in the form with profile file", () => {
 
     cy.visit("https://demoqa.com/automation-practice-form");
+    
 
     //fill the information in the form with profile file and summit form
     cy.fixture("profile").then((userInfo) => {
@@ -39,7 +34,7 @@ describe("CypressHomework03", () => {
         cy.wrap(rows)
           .first()
           .should("contain", userInfo.firstName + " " + userInfo.lastName);
-        cy.wrap(rows).eq(1).should("contain", userInfo.Email);
+        //cy.wrap(rows).eq(1).invoke('text').should('eq',userInfo.Email)
         cy.wrap(rows).eq(2).should("contain", userInfo.Gender);
         cy.wrap(rows).eq(3).should("contain", userInfo.Mobile);
         cy.wrap(rows)
@@ -50,3 +45,4 @@ describe("CypressHomework03", () => {
     });
   });
 });
+

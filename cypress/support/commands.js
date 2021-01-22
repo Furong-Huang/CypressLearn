@@ -31,3 +31,29 @@
 //   cy.get('#visibleAfter',{timeout:5000}).should('be.visible');
 
 // })
+
+
+Cypress.Commands.add("addToCart", (num)=>{
+
+   cy.get('button.btn_primary').then(buttons =>{
+      let count=0
+      for(;count<num;count++)
+      {
+          cy.wrap(buttons).eq(count).click()
+      }
+      cy.get('.fa-layers-counter').invoke('text').should('eq',count.toString())  
+      
+  })
+})
+
+Cypress.Commands.add("clearCart", ()=>{
+
+   cy.get('.btn_secondary').then(buttons =>{
+      let count = buttons.length - 1
+      for(;count>=0;count--)
+      {
+         cy.wrap(buttons).eq(count).click()
+      }
+      cy.get('.fa-layers-counter').should('not.exist')
+  })
+})
