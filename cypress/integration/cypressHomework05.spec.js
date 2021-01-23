@@ -1,22 +1,24 @@
 describe('test before or after hook',()=>{
 
     before(()=>{
-        // cy.visit('http://a.testaddressbook.com/sign_in')
-        // cy.get('#session_email').clear().type('374373925@qq.com')
-        // cy.get('#session_password').clear().type('Signup@4170')
+        cy.visit('http://a.testaddressbook.com/sign_in')
+        cy.get('#session_email').clear().type('374373925@qq.com')
+        cy.get('#session_password').clear().type('Signup@4170')
+        cy.get('[data-test="submit"]').click()
+        cy.contains('Welcome to Address Book').should('be.visible')
     })
 
     afterEach(()=>{
-        // cy.visit('http://a.testaddressbook.com/addresses')
-        // cy.contains('Destroy').click()
-        // cy.on("window:alert", ()=>{
-        //     return true;
-        // })
+        cy.visit('http://a.testaddressbook.com/addresses')
+        cy.contains('Destroy').click()
+        cy.on("window:alert", ()=>{
+            return true;
+        })
     })
 
     after(()=>{
-        // cy.get('.navbar-toggler-icon').click()
-        // cy.get('[data-test="sign-out"]').click()
+        cy.get('[data-test="sign-out"]').click()
+        cy.get('[data-test="submit"]').should('be.visible')
     })
     
     it('add an address',()=>{
