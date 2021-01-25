@@ -36,14 +36,15 @@
 Cypress.Commands.add("addToCart", (num)=>{
 
    cy.get('button.btn_primary').then(buttons =>{
-      let count=0
-      for(;count<num;count++)
+
+      for(let count=0;count<num;count++)
       {
           cy.wrap(buttons).eq(count).click()
       }
-      cy.get('.fa-layers-counter').invoke('text').should('eq',count.toString())  
+      cy.get('.fa-layers-counter').invoke('text').should('eq',num.toString())  
       
   })
+  
 })
 
 Cypress.Commands.add("clearCart", ()=>{

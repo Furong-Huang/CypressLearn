@@ -10,10 +10,17 @@ describe('test before or after hook',()=>{
 
     afterEach(()=>{
         cy.visit('http://a.testaddressbook.com/addresses')
-        cy.contains('Destroy').click()
-        cy.on("window:alert", ()=>{
-            return true;
+        cy.get('tbody tr').then(rows =>{
+            let count = rows.length-1
+            for(;count>=0;count--)
+            {
+                cy.get('tbody tr').eq(count).contains('Destroy').click()
+                cy.on("window:alert", ()=>{
+                    return true;
+                })
+            }
         })
+        cy.get('tbody tr').should('not.exist')
     })
 
     after(()=>{
