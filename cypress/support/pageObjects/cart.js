@@ -9,13 +9,13 @@ class CartPage {
 
   goToShopping() {
     cy.contains("Continue Shopping").click();
-    cy.url().should('contain','inventory')
+    cy.url().should("contain", "inventory");
   }
 
   goToCheckout() {
     cy.contains("CHECKOUT").click();
-    cy.url().should('contain','checkout-step-one')
+    cy.url().should("contain", "checkout-step-one");
   }
 }
 
-export default CartPage
+export default CartPage;

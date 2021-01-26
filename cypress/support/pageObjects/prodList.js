@@ -9,9 +9,8 @@ class ProductPage {
 
   goToCart() {
     cy.get("#shopping_cart_container").click();
-    cy.url().should('contain','cart')
+    cy.url().should("contain", "cart");
   }
-
 }
 
-export default ProductPage
+export default ProductPage;

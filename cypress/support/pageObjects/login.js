@@ -2,6 +2,7 @@ class LoginPage {
   visit() {
     cy.visit("/", { timeout: 10000 });
     cy.url().should("contain", "saucedemo");
+    cy.title().should('eq','Swag Labs')
     cy.window().then((win) => {
       win.sessionStorage.clear();
     });
@@ -14,4 +15,4 @@ class LoginPage {
   }
 }
 
-export default LoginPage
+export default LoginPage;
