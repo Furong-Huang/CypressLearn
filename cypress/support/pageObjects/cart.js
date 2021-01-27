@@ -1,6 +1,6 @@
 class CartPage {
   clearCart(num) {
-    cy.get(".btn_secondary").then((buttons) => {
+    cy.get(".btn_secondary").then(() => {
       for (let count = num - 1; count >= 0; count--) {
         cy.get(".btn_secondary").eq(count).click();
       }

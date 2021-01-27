@@ -1,6 +1,6 @@
-import LoginPage from "E:/Repository/CypressLearn/cypress/support/pageObjects/login.js";
-import ProductPage from "E:/Repository/CypressLearn/cypress/support/pageObjects/prodList.js";
-import CartPage from "E:/Repository/CypressLearn/cypress/support/pageObjects/cart.js";
+import CartPage from "../support/pageObjects/cart.js";
+import LoginPage from "../support/pageObjects/login.js";
+import ProductPage from "../support/pageObjects/prodList.js";
 
 describe("Page Object exercise", () => {
   it("try Page Object", () => {
