@@ -58,3 +58,16 @@ Cypress.Commands.add("clearCart", ()=>{
       cy.get('.fa-layers-counter').should('not.exist')
   })
 })
+
+Cypress.Commands.add("loginAPIWeb", ()=>{
+
+  cy.visit(Cypress.env('apiUrl'));
+  cy.get('[ui-sref="app.login"]').click();
+  cy.get('[placeholder="Email"]')
+    .type(Cypress.env('username'));
+  cy.get('[placeholder="Password"]')
+    .type(Cypress.env('password'));
+  cy.get('[type="submit"]').contains("Sign in").click();
+
+  
+})

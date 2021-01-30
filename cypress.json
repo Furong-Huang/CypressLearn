@@ -1,4 +1,9 @@
 {
-    "baseUrl": "https://www.saucedemo.com/"
+    "baseUrl": "https://www.saucedemo.com/",
+    "env":{
+        "apiUrl":"https://demo.realworld.io/",
+        "username":"374373925@qq.com",
+        "password":"Conduit@4170"
+    }
    
 }

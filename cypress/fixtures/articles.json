@@ -1,0 +1,195 @@
+{
+    "articles":[
+      {
+         "title":"Request from API1",
+         "slug":"request-from-api1-noza8l",
+         "body":"Angular is cool3",
+         "createdAt":"2020-11-14T09:51:13.621Z",
+         "updatedAt":"2020-11-14T09:51:13.621Z",
+         "tagList":[
+            
+         ],
+         "description":"API testing is easy2",
+         "author":{
+            "username":"Don-QA",
+            "bio":null,
+            "image":"https://static.productionready.io/images/smiley-cyrus.jpg",
+            "following":false
+         },
+         "favorited":false,
+         "favoritesCount":0
+      },
+      {
+         "title":"This is a title",
+         "slug":"this-is-a-title-2qltgl",
+         "body":"This is a body",
+         "createdAt":"2020-11-14T09:50:29.125Z",
+         "updatedAt":"2020-11-14T09:50:29.125Z",
+         "tagList":[
+            
+         ],
+         "description":"This is a description",
+         "author":{
+            "username":"Don-QA",
+            "bio":null,
+            "image":"https://static.productionready.io/images/smiley-cyrus.jpg",
+            "following":false
+         },
+         "favorited":false,
+         "favoritesCount":1
+      },
+      {
+         "title":"This is a title",
+         "slug":"this-is-a-title-ozhig3",
+         "body":"This is a body",
+         "createdAt":"2020-11-12T11:29:07.568Z",
+         "updatedAt":"2020-11-12T11:29:07.568Z",
+         "tagList":[
+            
+         ],
+         "description":"This is a description",
+         "author":{
+            "username":"Don-QA",
+            "bio":null,
+            "image":"https://static.productionready.io/images/smiley-cyrus.jpg",
+            "following":false
+         },
+         "favorited":false,
+         "favoritesCount":0
+      },
+      {
+         "title":"Request from API1",
+         "slug":"request-from-api1-803qhj",
+         "body":"Angular is cool3",
+         "createdAt":"2020-11-12T11:28:36.579Z",
+         "updatedAt":"2020-11-12T11:28:36.579Z",
+         "tagList":[
+            
+         ],
+         "description":"API testing is easy2",
+         "author":{
+            "username":"Don-QA",
+            "bio":null,
+            "image":"https://static.productionready.io/images/smiley-cyrus.jpg",
+            "following":false
+         },
+         "favorited":false,
+         "favoritesCount":0
+      },
+      {
+         "title":"This is a title",
+         "slug":"this-is-a-title-e92ouy",
+         "body":"This is a body",
+         "createdAt":"2020-11-12T11:28:29.097Z",
+         "updatedAt":"2020-11-12T11:28:29.097Z",
+         "tagList":[
+            
+         ],
+         "description":"This is a description",
+         "author":{
+            "username":"Don-QA",
+            "bio":null,
+            "image":"https://static.productionready.io/images/smiley-cyrus.jpg",
+            "following":false
+         },
+         "favorited":false,
+         "favoritesCount":0
+      },
+       {
+          "title":"12344",
+          "slug":"fdsfsdfsdfsdf-rtxjkd",
+          "body":"sdfsfsfsdfs",
+          "createdAt":"2021-01-30T00:14:23.409Z",
+          "updatedAt":"2021-01-30T00:14:23.409Z",
+          "tagList":[
+             
+          ],
+          "description":"sdfsfs",
+          "author":{
+             "username":"Don-QA",
+             "bio":null,
+             "image":"https://static.productionready.io/images/smiley-cyrus.jpg",
+             "following":false
+          },
+          "favorited":false,
+          "favoritesCount":0
+       },
+       {
+          "title":"This is a title",
+          "slug":"this-is-a-title-4w03n5",
+          "body":"This is a body",
+          "createdAt":"2021-01-29T22:34:36.558Z",
+          "updatedAt":"2021-01-29T22:34:36.558Z",
+          "tagList":[
+             
+          ],
+          "description":"This is a description",
+          "author":{
+             "username":"Don-QA",
+             "bio":null,
+             "image":"https://static.productionready.io/images/smiley-cyrus.jpg",
+             "following":false
+          },
+          "favorited":false,
+          "favoritesCount":0
+       },
+       {
+          "title":"This is a title",
+          "slug":"this-is-a-title-pd6w9a",
+          "body":"This is a body",
+          "createdAt":"2021-01-29T22:31:29.774Z",
+          "updatedAt":"2021-01-29T22:31:29.774Z",
+          "tagList":[
+             
+          ],
+          "description":"This is a description",
+          "author":{
+             "username":"Don-QA",
+             "bio":null,
+             "image":"https://static.productionready.io/images/smiley-cyrus.jpg",
+             "following":false
+          },
+          "favorited":false,
+          "favoritesCount":0
+       },
+       {
+          "title":"This is a title",
+          "slug":"this-is-a-title-w3c1pg",
+          "body":"This is a body",
+          "createdAt":"2021-01-29T22:28:26.114Z",
+          "updatedAt":"2021-01-29T22:28:26.114Z",
+          "tagList":[
+             
+          ],
+          "description":"This is a description",
+          "author":{
+             "username":"Don-QA",
+             "bio":null,
+             "image":"https://static.productionready.io/images/smiley-cyrus.jpg",
+             "following":false
+          },
+          "favorited":false,
+          "favoritesCount":0
+       },
+       {
+          "title":"This is a title",
+          "slug":"this-is-a-title-bx4df4",
+          "body":"This is a body",
+          "createdAt":"2021-01-29T22:27:22.445Z",
+          "updatedAt":"2021-01-29T22:27:22.445Z",
+          "tagList":[
+             
+          ],
+          "description":"This is a description",
+          "author":{
+             "username":"Don-QA",
+             "bio":null,
+             "image":"https://static.productionready.io/images/smiley-cyrus.jpg",
+             "following":false
+          },
+          "favorited":false,
+          "favoritesCount":0
+       }
+    ],
+    "articlesCount":49
+ }
