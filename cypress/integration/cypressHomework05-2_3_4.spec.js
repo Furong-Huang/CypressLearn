@@ -1,10 +1,11 @@
-describe("Homework 2", () => {
+const { data } = require("jquery");
+
+describe("Homework 2_3_4", () => {
   beforeEach("login the app", () => {
-      cy.loginAPIWeb()
+    cy.loginAPIWeb();
   });
 
   it("Validate HTTP request for adding a new article", () => {
-
     //Listen to the Post articles request
     cy.intercept("POST", "**/articles").as("postArticles");
 
@@ -17,7 +18,7 @@ describe("Homework 2", () => {
     cy.get('[placeholder="Write your article (in markdown)"]').type(
       "This is a body"
     );
-    cy.get('[placeholder="Enter tags"]').type("This is a tag");
+    cy.get('[placeholder="Enter tags"]').type("This is a tag{Enter}");
     cy.contains("Publish Article").click();
 
     //Validate HTTP request
@@ -30,12 +31,11 @@ describe("Homework 2", () => {
         "This is a description"
       );
       expect(xhr.response.body.article.title).to.equal("This is a title");
-      expect(xhr.response.body.article.tagList).to.be.empty;
+      expect(xhr.response.body.article.tagList).to.contain("This is a tag");
     });
   });
 
   it("Stub network response", () => {
-
     //Stub the request
     cy.intercept("**/api/articles?*", { fixture: "articles.json" }).as(
       "getArticles"
@@ -58,8 +58,7 @@ describe("Homework 2", () => {
     //cy.wait('@getArticles')
   });
 
-  it("Stub network response again", () => {
-
+  it.only("Stub network response again", () => {
     //Stub the request
     cy.intercept("**/api/articles?*", { fixture: "articles.json" }).as(
       "getArticles"
@@ -68,30 +67,19 @@ describe("Homework 2", () => {
     //Triger the resueqt
     cy.get('[href="#/@Don-QA"]').click();
 
-    //Validate response has ten data and author image is exist
-    cy.wait("@getArticles").then((data) => {
-      cy.get('[class="article-preview"]')
-        .find(
-          '[src="https://static.productionready.io/images/smiley-cyrus.jpg"]', {timeout:6000}
-        )
-        .should("have.length", 10)
-        .invoke("attr", "src")
-        .then((src) => {
-          expect(src).to.be.exist;
-        });
+    //Validate response has ten data and each author image is exist
+    cy.wait("@getArticles", { timeout: 8000 }).then((xhr) => {
+      expect(xhr.response.body.articles).to.have.lengthOf(10);
 
-      //Validate each article's author image matching fixture's
-      for (let count = 0; count < 10; count++) {
-        cy.get('[class="article-preview"]')
-          .find(
-            '[src="https://static.productionready.io/images/smiley-cyrus.jpg"]', {timeout:6000}
-          )
-          .eq(count)
-          .invoke("attr", "src")
-          .then((src) => {
-            expect(data.response.body.articles[count].author.image).to.eq(src);
-          });
-      }
+      //compare response's each author image to fixture's each author image
+      cy.fixture("articles").then((data) => {
+        for (let count = 0; count < 10; count++) {
+          expect(xhr.response.body.articles[count].author.image).to.be.exist;
+          expect(xhr.response.body.articles[count].author.image).to.eq(
+            data.articles[count].author.image
+          );
+        }
+      });
     });
   });
 });

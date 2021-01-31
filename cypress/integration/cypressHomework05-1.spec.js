@@ -1,13 +1,12 @@
 describe("Stub exercise", () => {
   before(() => {
     cy.request("GET", "https://reqres.in/api/users/2").then((response) => {
-      if (expect(response.body.data).to.not.be.null) {
+        expect(response.body.data).to.not.be.null
         cy.request("DELETE", "https://reqres.in/api/users/2").then(
           (response) => {
             expect(response.status).equal(204);
           }
         );
-      }
     });
   });
 
